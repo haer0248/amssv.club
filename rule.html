@@ -56,6 +56,14 @@
             -ms-user-select: none;
             user-select: none;
         }
+        
+
+        .container {
+            padding-right: 20%;
+            padding-left: 20%;
+            margin-right: auto;
+            margin-left: auto;
+        }
 
         body {
             background: linear-gradient(90deg, rgba(233, 30, 99, .5), rgba(63, 81, 181, .5)), url('https://amssv.club/image/background-01-20.17.18.webp');
@@ -81,9 +89,15 @@
         a:hover, a:active {
             color: var(--color-main-hover);
         }
+        @media screen and (max-width: 1024px) {
+            .container {
+                margin: 0;
+                padding: 0;
+            }
+        }
     </style>
 
-    <div id="main_content">
+    <div id="main_content" class="container">
         <div style="height: 60px;"></div>
         <a href="../">回首頁</a>
         <h1>遊玩規範</h1>
