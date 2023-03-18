@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh_tw">
+<html lang="zh-Hant-TW">
 
 <head>
     <title>無名氏官方網站 (๑•̀ㅂ•́)و✧</title>
@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="title" content="無名氏官方網站 (๑•̀ㅂ•́)و✧">
-    <meta name="description" content="無名氏伺服器 | 原味生存 | 熱情管理 | 自由飛行 | 歡迎您的加入！ | amssv.club">
+    <meta name="description" content="原味生存 | 熱情管理 | 自由飛行 | 歡迎您的加入！ | amssv.club">
     <meta name="auhtor" content="Michael Lin (https://www.facebook.com/haer0248)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -17,8 +17,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://amssv.club/">
     <meta property="og:title" content="無名氏官方網站 (๑•̀ㅂ•́)و✧">
-    <meta property="og:site_name" content="無名氏官方網站">
-    <meta property="og:description" content="無名氏伺服器 | 原味生存 | 熱情管理 | 自由飛行 | 歡迎您的加入！ | amssv.club">
+    <meta property="og:site_name" content="無名氏官方網站 (๑•̀ㅂ•́)و✧">
+    <meta property="og:description" content="原味生存 | 熱情管理 | 自由飛行 | 歡迎您的加入！ | amssv.club">
     <meta property="og:image" content="https://amssv.club/image/fb.png">
     <meta property="og:image:alt" content="無名氏官方網站FB圖片" />
     <meta property="og:image:width" content="484" />
@@ -29,7 +29,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://amssv.club/">
     <meta property="twitter:title" content="無名氏官方網站 (๑•̀ㅂ•́)و✧">
-    <meta property="twitter:description" content="無名氏伺服器 | 原味生存 | 熱情管理 | 自由飛行 | 歡迎您的加入！ | amssv.club">
+    <meta property="twitter:description" content="原味生存 | 熱情管理 | 自由飛行 | 歡迎您的加入！ | amssv.club">
     <meta property="twitter:image" content="https://amssv.club/image/fb.png">
 </head>
 
@@ -42,6 +42,7 @@
             --color-sub-hover: #85878b;
             --color-status-online: #23d160;
             --color-status-offline: #ff3860;
+            --color-status-offline-dark: #d6294c;
             --color-status-pending: #ffdd57;
             --color-status-other: #b9bbbe;
         }
@@ -54,7 +55,8 @@
             user-select: none;
         }
 
-        html, body {
+        html,
+        body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -159,7 +161,8 @@
             margin-right: 30px;
         }
 
-        form p, form span {
+        form p,
+        form span {
             color: #fff;
         }
 
@@ -168,6 +171,19 @@
             margin-bottom: 10px;
             font-size: 35px;
         }
+
+        a,
+        a:visited {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--color-main);
+        }
+
+        a:hover,
+        a:active {
+            color: var(--color-main-hover);
+        }
+
 
         .notification {
             background-color: #f5f5f5;
@@ -184,11 +200,18 @@
         }
 
         .notification.is-danger {
-            background-color: var(--color-status-offline);
+            background-color: var(--color-status-offline-dark);
             color: #fff;
         }
 
-        
+        .notification .title {
+            margin-top: 0;
+            margin-bottom: 1%;
+            text-align: center;
+            font-weight: bolder;
+            font-size: larger;
+        }
+
         .notification a {
             color: #ffee00;
             font-weight: bold;
@@ -239,7 +262,7 @@
             color: #fff;
             padding: 15px 0;
             border-radius: 3px;
-            position:relative;
+            position: relative;
             bottom: 0;
             left: 0;
             cursor: pointer;
@@ -248,16 +271,6 @@
 
         .copyBtn:hover {
             background: var(--color-main-hover);
-        }
-
-        a, a:visited {
-            text-decoration: none;
-            font-weight: 500;
-            color: var(--color-main);
-        }
-
-        a:hover, a:active {
-            color: var(--color-main-hover);
         }
 
         .fixed {
@@ -276,13 +289,15 @@
 
     <div id="main_content">
         <div class="notification is-danger">
-            <strong>⚠️ お知らせ</strong><br>
-            感謝各位玩家 5 年來的支持，無名氏伺服器已暫訂預計於今年停運！<br>
-            詳細停運時程請加入 <a href="https://discord.gg/3Ww2j8hdZA" target="_blank" tabindex="-99">Discord</a> 閱讀討論串 <a href="https://discord.com/channels/231681872189587466/1086217718270799882" target="_blank">#無名氏伺服器預計於今年八月關閉</a>。
+            <p class="title">重要公告 | お知らせ</p>
+            感謝各位玩家 5 年來的支持，無名氏伺服器已預計於今年停運！<br>
+            詳細停運時程請加入 <a href="https://discord.gg/3Ww2j8hdZA" target="_blank" tabindex="-99">Discord</a> 後閱讀討論串 <a
+                href="https://discord.com/channels/231681872189587466/1086217718270799882"
+                target="_blank">#無名氏伺服器預計於今年八月關閉</a>。
         </div>
         <div id="main_invite_box">
             <div class="logo_box">
-                <img class="logo" src="https://amssv.club/image/server_icon_128.webp" />
+                <img class="logo" src="https://amssv.club/image/server_icon_128.webp" alt="Server Icon"/>
             </div>
             <div class="main_accept_box">
                 <form>
@@ -293,9 +308,12 @@
                         <span class="ver"><i class="status-icon status-other"></i> Java 1.18.2 +</span>
                     </div>
                     <div style="height: 50px;"></div>
-                    <button id="copy" class="copyBtn" data-clipboard-text="amssv.club" type="button" tabindex="-99">接受邀請</button>
+                    <button id="copy" class="copyBtn" data-clipboard-text="amssv.club" type="button"
+                        tabindex="-99">接受邀請</button>
                     <div class="link_information">
-                        <p>24 小時冷氣開放中<br>點選按鈕即可複製連線位置「amssv.club」<br>加入伺服器表示您同意我們的<a href="../rule.html" target="_blank" tabindex="-99">遊玩規範</a>，同時您也可以加入<a href="https://discord.gg/3Ww2j8hdZA" target="_blank" tabindex="-99">Discord</a>來取得我們伺服器的最新進度。</p>
+                        <p>點選按鈕即可複製連線位置「amssv.club」<br>加入伺服器表示您同意我們的<a href="../rule.html" target="_blank"
+                                tabindex="-99">遊玩規範</a>，同時您也可以加入<a href="https://discord.gg/3Ww2j8hdZA" target="_blank"
+                                tabindex="-99">Discord</a>來取得我們伺服器的最新進度。</p>
                     </div>
                 </form>
             </div>
