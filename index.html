@@ -274,6 +274,11 @@
             background: var(--color-main-hover);
         }
 
+        [disabled], [disabled]:hover {
+            background: gray;
+            cursor: not-allowed;
+        }
+
         .fixed {
             position: absolute;
             top: 20%;
@@ -292,10 +297,8 @@
         <div class="notification is-danger">
             <p class="title">重要公告 | お知らせ</p>
             感謝各位玩家 5 年來的支持，無名氏伺服器已預計於今年停運！<br>
-            詳細停運時程請加入 <a href="https://discord.gg/3Ww2j8hdZA" target="_blank" tabindex="-99">Discord</a> 後閱讀討論串 <a
-                href="https://discord.com/channels/231681872189587466/1086217718270799882"
-                target="_blank">#無名氏伺服器預計於今年八月關閉</a>。<br>
-            2023/07/31 會在 <a href="https://twitch.tv/haer0248" target="_blank">Twitch</a> 開放提問無名氏營運 QA。
+            詳細停運時程請加入 <a href="https://discord.gg/3Ww2j8hdZA" target="_blank" tabindex="-99">Discord</a> 後閱讀討論串 <a href="https://discord.com/channels/231681872189587466/1086217718270799882" target="_blank">#無名氏伺服器預計於今年八月關閉</a>。<br>
+            2023/06/30 開始可前往 <a href="https://twitch.tv/haer0248" target="_blank">Twitch</a> 提問無名氏營運 QA。
         </div>
         <div id="main_invite_box">
             <div class="logo_box">
@@ -310,35 +313,16 @@
                         <span class="ver"><i class="status-icon status-other"></i> Java 1.18.2 +</span>
                     </div>
                     <div style="height: 50px;"></div>
-                    <button id="copy" class="copyBtn" data-clipboard-text="amssv.club" type="button"
-                        tabindex="-99">接受邀請</button>
+                    <button id="copy" class="copyBtn" data-clipboard-text="amssv.club" type="button" tabindex="-99" disabled="">邀請無效</button>
                     <div class="link_information">
-                        <p>點選按鈕即可複製連線位置「amssv.club」<br>加入伺服器表示您同意我們的<a href="../rule.html" target="_blank"
-                                tabindex="-99">遊玩規範</a>，同時您也可以加入<a href="https://discord.gg/3Ww2j8hdZA" target="_blank"
-                                tabindex="-99">Discord</a>來取得我們伺服器的最新進度。</p>
+                        <p>這個邀請可能無效或已過期。</p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.haer0248.me/copy.min.js"></script>
     <script>
-        // 複製 IP 位置
-        var copy_button = document.getElementById("copy");
-        var clipboard = new ClipboardJS('#copy');
-        clipboard.on('success', function (e) {
-            e.clearSelection();
-            copy_button.innerHTML = '已複製連線位置！'
-            setTimeout(function () {
-                copy_button.innerHTML = '接受邀請'
-            }, 7000);
-        });
-        clipboard.on('error', function (e) {
-            e.clearSelection();
-            copy_button.innerHTML = '複製失敗，請手動輸入 amssv.club'
-        });
-
         // 偵測伺服器狀態
         fetch("https://status.mc-list.xyz/amssv.club").then(response => response.json()).then(data => {
             if (data.status === "online") {
