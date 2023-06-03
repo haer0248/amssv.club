@@ -309,29 +309,18 @@
                     <h1 class="title">NekomataOnigiri 對您發送邀請加入</h1>
                     <p class="name">無名氏伺服器</p>
                     <div class="server_information">
-                        <span class="status" data-status><i class="status-icon status-pending"></i> 取得資料中...</span>
+                        <span class="status" data-status><i class="status-icon status-offline"></i> 停止服務</span>
                         <span class="ver"><i class="status-icon status-other"></i> Java 1.18.2 +</span>
                     </div>
                     <div style="height: 50px;"></div>
                     <button id="copy" class="copyBtn" data-clipboard-text="amssv.club" type="button" tabindex="-99" disabled="">邀請無效</button>
                     <div class="link_information">
-                        <p>這個邀請可能無效或已過期。</p>
+                        <p>抱歉，這個邀請可能無效或已過期，無名氏伺服器已經停運囉。<br><a href="https://haer0248.me/1273/" target="_blank" rel="noopener noreferrer">前往閱讀關於無名氏停運的相關文章</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <script>
-        // 偵測伺服器狀態
-        fetch("https://status.mc-list.xyz/amssv.club").then(response => response.json()).then(data => {
-            if (data.status === "online") {
-                document.querySelector("[data-status]").innerHTML = `<i class="status-icon status-online"></i> ${data.player.now} 位玩家`;
-            } else {
-                document.querySelector("[data-status]").innerHTML = `<i class="status-icon status-offline"></i> 離線狀態`;
-            }
-        });
-    </script>
 </body>
 
 </html>
